@@ -1,21 +1,15 @@
 programa {
-    
 	funcao inicio() {
-	    real horas = 0.0
-	    real minutos = 0.0
-	    real segundos = 0.0
-	    inteiro soma_tudo
-	    
-        escreva("Quantos segundos de evento: ")
-        //leia(segundos)
-        segundos = 3600.0
-        
-        minutos = segundos / 60
-        horas = ((segundos / 60) / 60)
-        segundos = segundos - (minutos * 60)
-        
-        escreva("\nHoras: ", horas, "\nMinutos: ", minutos, "\nSegundos: ", segundos)
-        
-	    
-	}
+	
+	    inteiro seg, min, horas
+		
+		escreva("\nTempo de Duração de um Evento em uma Fábrica")
+		
+		escreva("\nEntre com o Tempo em segundos: ")
+		leia(seg)
+		horas = seg / 3600
+		min = (seg -(horas*3600))/60
+		seg = (seg-(horas*3600)-(min*60))
+		escreva(horas," Horas,", min," minutos e ", seg, " segundos")
+    }
 }
