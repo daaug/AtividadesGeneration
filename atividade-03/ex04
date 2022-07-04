@@ -1,0 +1,21 @@
+programa {
+	funcao inicio() {
+		//Crie um programa que receba valores do usuário para preencher uma matriz 3X3, e
+        //em seguida, exiba a soma dos valores dela e a soma dos valores da primeira
+        //diagonal, ou seja, diagonal principal.
+	    
+	    inteiro matriz[3][3] = {{1,2,3},{4,5,6},{7,8,9}}
+	    inteiro soma_tudo = 0, soma_diag = 0
+	    
+	    para(inteiro l = 0; l < 3; l++){
+	        soma_diag += matriz[l][l]
+	        para(inteiro c = 0; c < 3; c++){
+	            soma_tudo += matriz[l][c]
+	        }
+	    }
+	    
+	    escreva("\nSoma diagonal: ", soma_diag)
+	    escreva("\nSoma tudo: ", soma_tudo)
+	}
+}
+
