@@ -2,12 +2,7 @@ package exercises.interfaces;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
-import javax.swing.plaf.nimbus.State;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -29,28 +24,15 @@ public class MySqlCon {
       */
 
       // New Way
-      /*
-      MysqlDataSource ds = new MysqlDataSource();
-      ds.setUser("daniel");
-      ds.setPassword("1q2w3e");
-      ds.setServerName("localhost:3306/db_servico_hora");
+      MysqlDataSource mySqlDs = new MysqlDataSource();
+      mySqlDs.setURL(DBURL);
+      mySqlDs.setUser(DBUSER);
+      mySqlDs.setPassword(DBPASS);
 
-      Connection con = ds.getConnection();
-      Statement st = con.createStatement();
-      ResultSet rs = st.executeQuery("select * from funcionarios");
-
-      con.close();
-      st.close();
-       */
-
-      MysqlDataSource mysqlds = new MysqlDataSource();
-      mysqlds.setURL(DBURL);
-      mysqlds.setUser(DBUSER);
-      mysqlds.setPassword(DBPASS);
-
-      Connection conn = mysqlds.getConnection();
+      Connection conn = mySqlDs.getConnection();
       Statement st = conn.createStatement();
       ResultSet rs = st.executeQuery("select * from funcionarios");
+
       while (rs.next()){
         System.out.println(rs.getString(2));
       }
