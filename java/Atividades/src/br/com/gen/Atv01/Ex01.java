@@ -10,6 +10,10 @@ public class Ex01 {
     int num01, num02, num03;
     int maior = 0;
 
+    System.out.println("Insira nome completo");
+    String nome = scanner.nextLine();
+    System.out.println(nome);
+
     System.out.println("Primeiro num: ");
     num01 = scanner.nextInt();
     maior = num01 >= maior ? num01 : maior;
